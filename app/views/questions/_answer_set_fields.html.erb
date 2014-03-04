@@ -1,0 +1,16 @@
+<fieldset>
+  <%= f.label :good_answer, "Entrez la bonne réponse" %>
+  <%= f.text_field :good_answer %>
+
+  <%= f.label :answer1, "Entrez une fausse réponse" %>
+  <%= f.text_field :answer1 %>
+
+    <%= f.label :answer2, "Entrez une fausse réponse" %>
+  <%= f.text_field :answer2 %>
+
+    <%= f.label :answer3, "Entrez une fausse réponse" %>
+  <%= f.text_field :answer3 %>
+
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "remove", '#', class: "remove_fields" %>
+</fieldset>

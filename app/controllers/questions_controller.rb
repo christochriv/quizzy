@@ -56,6 +56,6 @@ class QuestionsController < ApplicationController
     end
 
     def question_params
-      params.require(:question).permit(:query, :explication, :source_url, :difficulty)
+      params.require(:question).permit(:query, :explication, :source_url, :difficulty, :answers_set_attributes)
     end
 end
