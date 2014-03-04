@@ -1,0 +1,17 @@
+<h2>Welcome, <%= @user.first_name %>!</h2>
+<h4>Here are all the information we have about you</h4>
+
+<p>Your name: <%= current_user.first_name %> <%= current_user.last_name %></p>
+<p>Your birth date: <%= current_user.birth_date %></p>
+<p>Your email: <%= current_user.email %></p>
+
+
+<p>Your last login : <%= current_user.last_sign_in_at %></p>
+
+<table>
+  <tbody>
+      <tr>
+        <td><%= link_to 'Edit', edit_user_registration_path %></td>
+      </tr>
+  </tbody>
+</table>

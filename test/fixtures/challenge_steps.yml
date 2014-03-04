@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  challenge_id: 
+  question_id: 
+  answerer_id: 
+  chosen_answer_id: 1
+
+two:
+  challenge_id: 
+  question_id: 
+  answerer_id: 
+  chosen_answer_id: 1

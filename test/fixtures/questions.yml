@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  query: MyText
+  answer_id: 
+  good_answer_id: 1
+  explication: MyText
+  source_url: MyText
+  points: 1
+
+two:
+  query: MyText
+  answer_id: 
+  good_answer_id: 1
+  explication: MyText
+  source_url: MyText
+  points: 1

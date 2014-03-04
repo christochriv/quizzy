@@ -1,0 +1,33 @@
+<%= form_for [@question, @answers_set] do |f| %>
+
+	<% f.hidden_field :question_id, :value => @question.id %>
+	
+	<%= @question.query %>
+
+  <div class="field">
+    <%= f.label "Good Answer" %><br>
+    <%= f.text_area :good_answer, placeholder: 'Entrez la bonne réponse' %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Other Choice n°1" %><br>
+    <%= f.text_area :answer1, placeholder: 'Entrez une autre réponse possible' %>
+  </div>    
+
+  <div class="field">
+    <%= f.label "Other Choice n°2" %><br>
+    <%= f.text_area :answer2, placeholder: 'Entrez une autre réponse possible' %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Other Choice n°3" %><br>
+    <%= f.text_area :answer3, placeholder: 'Entrez une autre réponse possible' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>    
+<% end %>
+
+
+

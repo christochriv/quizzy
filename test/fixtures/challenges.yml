@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  champion_id: 
+  invite_key: MyString
+  score: 1
+
+two:
+  champion_id: 
+  invite_key: MyString
+  score: 1

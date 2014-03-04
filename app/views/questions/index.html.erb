@@ -1,0 +1,52 @@
+<h1>Listing questions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Query</th>
+      <th>Set of possible answers</th>
+      <th>Correct answer</th>
+      <th>Explication</th>
+      <th>Source URL</th>
+      <th>Difficulty</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.query %></td>
+        <td>
+          <% if question.answers_set != nil %>
+            <p><%= question.answers_set.answer1 %></p>
+            <p><%= question.answers_set.answer2 %></p>
+            <p><%= question.answers_set.answer3 %></p>
+            <p><%= question.answers_set.good_answer %></p>
+          <% else %>
+            <p>No answers entered</p>
+          <% end %>
+        </td>
+        <td>
+          <% if question.answers_set != nil %>
+           <%= question.answers_set.good_answer %>
+          <% else %>
+            <p>No good answer entered</p>
+          <% end %>
+        </td>
+        <td><%= question.explication %></td>
+        <td><%= question.source_url %></td>
+        <td><%= question.difficulty %></td>
+        <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question', new_question_path %>

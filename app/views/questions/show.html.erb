@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Query:</strong>
+  <%= @question.query %>
+</p>
+
+<p>
+  <strong>Explication:</strong>
+  <%= @question.explication %>
+</p>
+
+<p>
+  <strong>Source url:</strong>
+  <%= @question.source_url %>
+</p>
+
+<p>
+  <strong>Difficulty:</strong>
+  <%= @question.difficulty %>
+</p>
+
+<%= link_to 'Add Answers', new_question_answers_set_path(question_id: @question.id) %> |
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>
