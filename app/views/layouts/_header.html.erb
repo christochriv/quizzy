@@ -1,0 +1,30 @@
+<header class="header-10">
+    <div class="container">
+        <div class="navbar span12">
+            <div class="navbar-inner">
+                <button type="button" class="btn btn-navbar"></button>
+                <a class="brand" href="#">Quizzy</a>
+                <div class="nav-collapse collapse pull-right">
+                    <ul class="nav">
+                        <li class="active"></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                    <form class="navbar-form pull-left">
+                    <% if user_signed_in? %>
+                        <div class="btn btn-info">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=current_user.first_name %> <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><%= link_to "Mes informations", profile_path %></li>
+                                <li class="divider"></li>
+                                <li><%= link_to('Se déconnecter', destroy_user_session_path, :method => :delete) %></li>      
+                            </ul>
+                        </div>
+                    
+                    <% end %>
+                    </form>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

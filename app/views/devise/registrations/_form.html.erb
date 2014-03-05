@@ -1,0 +1,32 @@
+
+<div class="signup-form">
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+        <div class="controls controls-row">
+            <%= f.text_field :first_name, class: "span2", placeholder: "Bobby" %>
+            <%= f.text_field :last_name, class: "span2", placeholder: "Lapointe" %>
+        </div>
+
+        <div class="controls controls-row">
+            <%= f.email_field :email, :autofocus => true, class: "span4", placeholder: "Your E-mail"%>
+        </div>
+
+     <!--    <div class="controls controls-row">
+            <%= f.date_field :birth_date, class: "span4"%>
+        </div--> 
+
+        <div class="controls controls-row">
+            <%= f.password_field :password, class: "span4", placeholder: "Password" %>
+           
+        </div>
+
+
+        <div class="controls controls-row">
+            <%= f.submit "Sign up", class: "btn btn-block btn-info"%>
+        </div>
+    <% end %>
+</div>
+
+
+

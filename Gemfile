@@ -44,6 +44,9 @@ gem 'devise'
 # Photos integration
 gem 'paperclip', "~> 3.0"
 
+#Facebook authentication
+gem 'omniauth-facebook'
+
 #debuger
 group :development do
   gem 'better_errors'
