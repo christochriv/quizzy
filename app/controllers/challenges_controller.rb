@@ -1,5 +1,6 @@
 class ChallengesController < ApplicationController
   before_action :set_challenge, only: [:show, :edit, :update, :destroy]
+  before_action :gather_available_questions, only: [:index, :show, :new]
 
   def index
     @challenges = Challenge.all
@@ -9,17 +10,13 @@ class ChallengesController < ApplicationController
     @challenge.add_points(@challenge)
   end
 
-  def new
+  def new 
     @challenge = current_user.challenges.create
-    answered_question_ids = ChallengeStep.where(answerer: current_user).collect {|p| [ p.question_id ] }.flatten.uniq
-    @available_questions = Question.all.where.not(id: answered_question_ids).limit(2)
-
-    @available_questions.each do |question|
+    @available_questions.limit(Challenge::QUESTIONS_PER_CHALLENGE).each do |question|
       @challenge.challenge_steps.create(question: question, answerer: current_user)
     end
 
     redirect_to [@challenge, @challenge.challenge_steps.first]
-
   end
 
   def edit
@@ -64,6 +61,10 @@ class ChallengesController < ApplicationController
 
     def set_challenge
       @challenge = Challenge.find(params[:id])
+    end
+
+    def gather_available_questions
+      @available_questions = Question.available_questions current_user
     end
 
     def challenge_params
