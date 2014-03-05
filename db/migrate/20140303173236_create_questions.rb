@@ -5,6 +5,8 @@ class CreateQuestions < ActiveRecord::Migration
       t.text :explication
       t.text :source_url
       t.integer :difficulty
+      t.string :category
+      t.integer :week
 
       t.timestamps
     end

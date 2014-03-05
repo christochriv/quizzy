@@ -12,6 +12,7 @@ class ChallengesController < ApplicationController
 
   def new 
     @challenge = current_user.challenges.create
+    
     @available_questions.limit(Challenge::QUESTIONS_PER_CHALLENGE).each do |question|
       @challenge.challenge_steps.create(question: question, answerer: current_user)
     end
@@ -64,7 +65,7 @@ class ChallengesController < ApplicationController
     end
 
     def gather_available_questions
-      @available_questions = Question.available_questions current_user
+      @available_questions = Question.available_questions(current_user)
     end
 
     def challenge_params

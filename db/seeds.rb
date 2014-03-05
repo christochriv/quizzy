@@ -7,15 +7,17 @@ user = User.new(
 
 user.save!(:validate => false)
 
-quiz = User.first.challenges.create(invite_key: "testdelakey", score: 13)
+quiz = User.first.challenges.create(invite_key: "testdelakey", score: 69)
 
 ##########################################################################################
 
 question = Question.new(
-	:query => "Quel est ce test, Ô ma gloire ?", 
-	:explication => "Je teste mon Seed", 
-	:source_url => "http://www.seed.fr", 
+	:query => "Quelle arme de destruction massive, massivement utilisée en Syrie depuis le début de la guerre civile, aurait fait jusqu'à présent des dizaines de milliers de victimes ?", 
+	:explication => "'« Le monde se préoccupe des armes chimiques; mais, pour nous, Syriennes, le viol est pire que la mort », murmure en un sanglot une étudiante en droit qui n'a encore osé confier son drame à personne.'C'est le crime le plus tu, perpétré actuellement en Syrie. Un crime massif, organisé par le régime et réalisé dans les conditions les plus barbares. Un crime fondé sur l'un des tabous les mieux ancrés dans la société traditionnelle syrienne et sur le silence des victimes, convaincues de risquer  le rejet par leur propre famille, voire une condamnation à mort. Il toucherait des dizaines de milliers de survivantes.", 
+	:source_url => "http://www.lemonde.fr/proche-orient/article/2014/03/04/syrie-le-viol-arme-de-destruction-massive_4377603_3218.html", 
 	:difficulty => 3,
+	:category => "International",
+	:week => 1
 	)
 
 question.save!(:validate => false)
@@ -24,10 +26,10 @@ question.save!(:validate => false)
 
 set = AnswersSet.new(
 	:question_id => 1,
-	:answer1 => "Réponse n°1", 
-	:answer2 => "Réponse n°2", 
-	:answer3 => "Réponse n°3", 
-	:good_answer => "Réponse n°4"
+	:answer1 => "Le gaz moutarde", 
+	:answer2 => "Le napalm", 
+	:answer3 => "Les mines anti-personnelles", 
+	:good_answer => "Le viol"
 	)
 
 set.save!(:validate => false)
@@ -35,10 +37,12 @@ set.save!(:validate => false)
 ##########################################################################################
 
 question2 = Question.new(
-	:query => "Comment s'appelle la place de Kiev sur laquelle se concentraient les manifs ukrainiennes ?", 
-	:explication => "Il va y avoir la guerre !", 
-	:source_url => "http://www.ukraine.fr", 
+	:query => "Qu'a fait Patrick Buisson, l'ancien conseiller de Nicolas Sarkozy pendant le précédent quinquennat, pour susciter de tels remous dans la sphère politique française ?", 
+	:explication => "Le Canard Enchainé publie ce qu'il présente comme le verbatim d'une réunion à l'Elysée, enregistrée à l'aide d'un dictaphone par l'ex-conseiller de M. Sarkozy. Selon le journal satirique, la scène se déroule le 27 février 2011, lors d'une réunion de travail autour du président, à quelques heures du remaniement qu'il va annoncer.", 
+	:source_url => "http://abonnes.lemonde.fr/politique/article/2014/03/05/buisson-a-bien-enregistre-sarkozy-a-son-insu_4377644_823448.html", 
 	:difficulty => 3,
+	:category => "France",
+	:week => 1
 	)
 
 question2.save!(:validate => false)
@@ -47,10 +51,10 @@ question2.save!(:validate => false)
 
 set = AnswersSet.new(
 	:question_id => 2,
-	:answer1 => "Tiananman", 
-	:answer2 => "Saint-Marc", 
-	:answer3 => "Place rouge", 
-	:good_answer => "Maidan"
+	:answer1 => "Il tournait des films porno", 
+	:answer2 => "Il espionnait l'UMP pour le compte du FN", 
+	:answer3 => "Il recevait des pots-de-vins de Serge Dassault", 
+	:good_answer => "Il enregistrait Nicolas Sarkozy à son insu"
 	)
 
 set.save!(:validate => false)
@@ -62,6 +66,8 @@ question3 = Question.new(
 	:explication => "Les salauds !", 
 	:source_url => "http://www.homo.fr", 
 	:difficulty => 3,
+	:category => "International",
+	:week => 1
 	)
 
 question3.save!(:validate => false)
@@ -84,7 +90,9 @@ question4 = Question.new(
 	:query => "Qui est le chef du Wagon ?", 
 	:explication => "Blop !", 
 	:source_url => "http://www.lewagon.fr", 
-	:difficulty => 1,
+	:difficulty => 3,
+	:category => "International",
+	:week => 1
 	)
 
 question4.save!(:validate => false)
@@ -108,7 +116,9 @@ question5 = Question.new(
 	:query => "Qui vient d'entrer en Ukraine ?", 
 	:explication => "Blop !", 
 	:source_url => "http://www.russie.fr", 
-	:difficulty => 1,
+	:difficulty => 3,
+	:category => "International",
+	:week => 1
 	)
 
 question5.save!(:validate => false)
@@ -132,7 +142,9 @@ question6 = Question.new(
 	:query => "Que veut construire NKM à la Gare du Nord ?", 
 	:explication => "Ce n'est pas un métro ...", 
 	:source_url => "http://www.russie.fr", 
-	:difficulty => 1,
+	:difficulty => 3,
+	:category => "International",
+	:week => 1
 	)
 
 question6.save!(:validate => false)

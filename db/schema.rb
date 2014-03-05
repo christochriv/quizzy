@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 20140305141756) do
     t.text     "explication"
     t.text     "source_url"
     t.integer  "difficulty"
+    t.string   "category"
+    t.integer  "week"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
