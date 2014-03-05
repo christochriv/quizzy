@@ -1,28 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Quizy</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <title>Quizzy</title>
+  <!-- this code between <header> ... </header> -->
+  <link rel="stylesheet" href="/flat-ui/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="/flat-ui/bootstrap/css/bootstrap-responsive.css">
+  <link rel="stylesheet" href="/flat-ui/css/flat-ui.css">
+  <!-- Using only with Flat-UI (free)-->
+  <link rel="stylesheet" href="/common-files/css/icon-font.css">
+  <!-- end -->
+  <link rel="stylesheet" href="/common-files/css/animations.css">
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+
+
+
+  <!-- header -->
+  <link rel="stylesheet" href="/ui-kit-header/css/style.css">
+  <!-- footer -->
+  <link rel="stylesheet" href="/ui-kit-footer/css/style.css">
+
+
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
 
 </head>
 <body>
 
-<%= render "layouts/navbar"%>
+<%= render "layouts/header" %>
 
-<div class="container-fluid">
-  <%= yield %>
-</div>
 
-<%= render "layouts/footer"%>
+<%= yield %>
+
+<%= render "layouts/footer" %>
 
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-</body>
 
-</html>
+
+
+  <script src="/flat-ui/js/jquery-1.8.3.min.js"></script>
+  <!-- this code directly before </body> -->
+  <script src="/flat-ui/js/bootstrap.min.js"></script>
+  <!--[if lt IE 8]>
+  <script src="../flat-ui/js/icon-font-ie7.js"></script>
+  <![endif]-->
+  <script src="/common-files/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+  <script src="/common-files/js/modernizr.custom.js"></script>
+  <script src="/common-files/js/page-transitions.js"></script>
+  <script src="/common-files/js/easing.min.js"></script>
+  <script src="/common-files/js/jquery.svg.js"></script>
+  <script src="/common-files/js/jquery.svganim.js"></script>
+  <script src="/common-files/js/jquery.parallax.min.js"></script>
+  <script src="/common-files/js/startup-kit.js"></script>
+</body>

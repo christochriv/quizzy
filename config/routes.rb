@@ -1,6 +1,6 @@
 Quiz::Application.routes.draw do
 	
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
   devise_scope :user do
     authenticated :user do
@@ -10,6 +10,7 @@ Quiz::Application.routes.draw do
       root :to => 'devise/registrations#new', as: :unauthenticated_root
     end
   end
+
 
   resources :challenges do
     resources :challenge_steps
@@ -21,5 +22,7 @@ Quiz::Application.routes.draw do
 
   get '/profile' => 'users#show'
   get '/challenge/score(.:format)' => 'challenges#create', as: :score
+
+
 
 end
