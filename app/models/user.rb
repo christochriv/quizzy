@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
         user.last_name = auth.extra.raw_info.last_name
         user.token = auth.credentials.token
         user.image = auth.info.image # assuming the user model has an image
-        user.city = auth.location.name
+        user.city = auth.location.name if auth.location
         user.gender = auth.extra.raw_info.gender
     end
   end
