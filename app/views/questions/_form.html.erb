@@ -1,21 +1,33 @@
 <%= form_for @question do |f| %>
-  <% if @question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
 
-      <ul>
-      <% @question.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+<fieldset>
+  <div class="field">
+    <%= f.label :query, "Question" %><br />
+    <%= f.text_area :query, placeholder: 'Entrez votre question' %><br />
+  </div>
+
+  <div class="field">
+    <%= f.label :difficulty, "Difficulté de cette question (Facile: 1 / Difficile: 3)" %><br>
+    <%= f.number_field :difficulty, in: 1...4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :explication, "Entrez une explication qui apparaîtra à la fin du Quiz" %><br>
+    <%= f.text_area :explication %>
+  </div>
+
+  <div class="field">
+    <%= f.label :source_url, "Donnez un lien vers la source de votre information" %><br>
+    <%= f.text_field :source_url %>
+  </div>
+  
+  <%= f.check_box :_destroy %>
+  <%= f.label :_destroy, "Effacer la question" %>
+  
+  <%= f.fields_for :answers_set_attributes do |builder| %>
+    <%= render 'answer_set_fields', f: builder %>
   <% end %>
-
-  <%= f.fields_for :question do |builder| %>
-    <%= render 'question_fields', f: builder %>
-  <% end %>
-
-<%= link_to_add_fields "Add Question", f, :questions %>
+</fieldset>
 
   <div class="actions">
     <%= f.submit %>

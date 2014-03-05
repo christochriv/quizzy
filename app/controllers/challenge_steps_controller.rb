@@ -1,5 +1,5 @@
 class ChallengeStepsController < ApplicationController
-	before_action :set_challenge
+  before_action :set_challenge
 	before_action :set_challenge_step, only: [:show, :update]
 
 	def index
@@ -29,8 +29,8 @@ class ChallengeStepsController < ApplicationController
   def update
   	respond_to do |format|
       if @challenge_step.update(challenge_step_params)
-      	next_answer = @challenge.challenge_steps.where(chosen_answer: nil).first
-        format.html { redirect_to [@challenge, next_answer] }
+        next_question = @challenge.challenge_steps.where(chosen_answer: nil).first
+        format.html { redirect_to [@challenge, next_question] }
       else
         format.html { render action: 'show' }        
       end

@@ -3,7 +3,7 @@ class CreateChallenges < ActiveRecord::Migration
     create_table :challenges do |t|
       t.references :champion, index: true
       t.string :invite_key
-      t.integer :score
+      t.integer :score, :default => 0
 
       t.timestamps
     end

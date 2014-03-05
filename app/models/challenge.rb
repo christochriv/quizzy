@@ -3,4 +3,11 @@ class Challenge < ActiveRecord::Base
   has_many :challenge_steps
   has_many :questions
 
+  def add_points(current_challenge)
+ 		current_challenge.challenge_steps.each do |c|
+	  	c.chosen_answer == c.question.answers_set.good_answer ? current_challenge.score += 1 : nil
+	  end
+	  current_challenge.save
+	end
+
 end

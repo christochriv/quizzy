@@ -6,25 +6,28 @@ class ChallengesController < ApplicationController
   end
 
   def show
+    @challenge.add_points(@challenge)
   end
 
   def new
     @challenge = current_user.challenges.create
     answered_question_ids = ChallengeStep.where(answerer: current_user).collect {|p| [ p.question_id ] }.flatten.uniq
-    @available_questions = Question.all.where.not(id: answered_question_ids).limit(10)
+    @available_questions = Question.all.where.not(id: answered_question_ids).limit(2)
 
-    @available_questions.each do |q|
-      @challenge.challenge_steps.create(question: q, answerer: current_user)
+    @available_questions.each do |question|
+      @challenge.challenge_steps.create(question: question, answerer: current_user)
     end
 
     redirect_to [@challenge, @challenge.challenge_steps.first]
+
   end
 
   def edit
   end
 
   def create
-    @challenge = current_user.challenges.build(params[:challenge])
+    # Creation of Invite Key
+    # end
 
     respond_to do |format|
       if @challenge.save

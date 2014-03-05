@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140303173236) do
   create_table "challenges", force: true do |t|
     t.integer  "champion_id"
     t.string   "invite_key"
-    t.integer  "score"
+    t.integer  "score",       default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
