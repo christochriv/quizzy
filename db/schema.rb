@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140305141756) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "answers_sets", force: true do |t|
     t.integer  "question_id"
     t.string   "answer1"
@@ -32,9 +35,9 @@ ActiveRecord::Schema.define(version: 20140305141756) do
     t.datetime "updated_at"
   end
 
-  add_index "challenge_steps", ["answerer_id"], name: "index_challenge_steps_on_answerer_id"
-  add_index "challenge_steps", ["challenge_id"], name: "index_challenge_steps_on_challenge_id"
-  add_index "challenge_steps", ["question_id"], name: "index_challenge_steps_on_question_id"
+  add_index "challenge_steps", ["answerer_id"], name: "index_challenge_steps_on_answerer_id", using: :btree
+  add_index "challenge_steps", ["challenge_id"], name: "index_challenge_steps_on_challenge_id", using: :btree
+  add_index "challenge_steps", ["question_id"], name: "index_challenge_steps_on_question_id", using: :btree
 
   create_table "challenges", force: true do |t|
     t.integer  "champion_id"
@@ -44,7 +47,7 @@ ActiveRecord::Schema.define(version: 20140305141756) do
     t.datetime "updated_at"
   end
 
-  add_index "challenges", ["champion_id"], name: "index_challenges_on_champion_id"
+  add_index "challenges", ["champion_id"], name: "index_challenges_on_champion_id", using: :btree
 
   create_table "questions", force: true do |t|
     t.text     "query"
@@ -79,7 +82,7 @@ ActiveRecord::Schema.define(version: 20140305141756) do
     t.string   "gender"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
