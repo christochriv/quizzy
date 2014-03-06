@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
   has_many :challenges, foreign_key: :champion_id
   has_many :challenge_steps, foreign_key: :answerer
 
+  validates :email, presence: {:message => 'Vous devez entrer un email'}
+  validates :first_name, presence: {:message => 'Vous devez entrer un prénom'}
+  validates :last_name, presence: {:message => 'Vous devez entrer un nom'}
+
   def self.find_for_facebook_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
         user.provider = auth.provider
@@ -30,6 +34,25 @@ class User < ActiveRecord::Base
       end
     end
 
+  def self.nb_of_answered_questions(user)
+    q = ChallengeStep.where(answerer: user).collect {|p| p.question }
+    @nb_of_questions = q.length 
+    return @nb_of_questions
+  end
 
+  def self.nb_of_good_answers(user)
+    score_table = Challenge.where(champion: user).collect {|p| p.score }
+    @nb_of_good_aswers = score_table.inject{ |sum, el| sum + el }.to_f.round
+    return @nb_of_good_aswers
+  end
+
+  def self.average_score(user)
+      if @nb_of_questions == nil
+        return "0"
+      else
+        @average_score = (@nb_of_good_aswers.to_f / @nb_of_questions * 100).round(2)
+        return @average_score
+      end
+  end
 
 end

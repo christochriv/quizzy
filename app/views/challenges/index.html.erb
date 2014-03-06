@@ -1,15 +1,27 @@
-<ul>
-  <% @challenges.each do |c|%>
-    <li>
-        <%= c.champion.first_name%> a tenté le <%= link_to "challenge #{c.id}", challenge_path(c) %> et a eu <%= c.score %> bonnes réponses 
-    </li>
-  <% end %>
-</ul>
+<div class="container text-center" >
+  <!-- <div class="hero-unit"> -->
+    <h1>Votre score moyen :</h1>
+      <h3><%= User.average_score(current_user)%> % de bonnes réponses !</h3>
+        <% if User.nb_of_good_answers(current_user) == 1 %>
+          <p>1 bonne réponse sur <%= User.nb_of_answered_questions(current_user) %> questions posées</p>
+        <% else %>
+          <p><%= User.nb_of_good_answers(current_user)%> bonnes réponses sur <%= User.nb_of_answered_questions(current_user) %> questions posées</p>
+        <% end %>
+      
+<!-- TO DO LIST -->      
+  <!--       <p>
+        C'est mieux que XXX % de nos utilisateurs !
+  </p> 
+  -->
 
-<p>
   <% if @available_questions.count == 0 %>
-    Vous avez fini tous les quiz disponibles cette semaine ! 
-  <% else %>
-    <%= link_to 'Commencer un nouveau challenge', new_challenge_path, class: "btn btn-default btn-lg" %>
-  <% end %>
-</p>
+      <p>Vous avez fini tous les quiz disponibles cette semaine ! </p>
+    <% else %>
+      <button type="button" class="btn btn-default">
+        <%= link_to 'Commencer un nouveau challenge', new_challenge_path %>
+      </button>
+    <% end %>
+
+</div>
+
+

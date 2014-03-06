@@ -1,1 +1,43 @@
-<%= render 'form' %>
+
+    <body>
+    
+        <section class="header-12-sub bg-midnight-blue">
+            <div class="background">&nbsp;</div>
+            <div class="container">
+                    <div class="span7">
+                        <div class="hero-unit">
+                             <%= form_for [@challenge, @challenge_step] do |f| %>
+                            <h1><%= @challenge_step.question.query %></h1>
+                        </div>
+                    </div>
+
+
+                <div class="span5">
+                    <div>
+                        <h3>Réponses possibles</h3>
+                        <a class="btn">
+                        	<%= f.label @challenge_step.question.answers_set.good_answer %>
+                        	<%= f.radio_button :chosen_answer, @challenge_step.question.answers_set.good_answer %>
+                        </a>
+                        <a class="btn">
+    						<%= f.label @challenge_step.question.answers_set.answer1 %>
+    						<%= f.radio_button :chosen_answer, @challenge_step.question.answers_set.answer1 %>
+                        </a>   
+                        <a class="btn">
+							<%= f.label @challenge_step.question.answers_set.answer2 %>
+							<%= f.radio_button :chosen_answer, @challenge_step.question.answers_set.answer2 %>
+                        </a>
+                        <a class="btn">
+							<%= f.label @challenge_step.question.answers_set.answer3 %>
+							<%= f.radio_button :chosen_answer, @challenge_step.question.answers_set.answer3 %>
+                        </a>   
+
+                        		<p><%= f.submit "Question suivante" %></p>	
+													<% end %>
+                    </div>
+                </div>
+            </div>
+        </section>
+   
+    </body>
+

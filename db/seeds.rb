@@ -2,7 +2,8 @@ user = User.new(
   :first_name => "Bob",
   :last_name => "Papillard",
   :email => "bob@lewagon.org",
-  :password => '12345678'
+  :password => '12345678',
+  
 )
 
 user.save!(:validate => false)

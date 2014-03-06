@@ -61,3 +61,7 @@ gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: :production
 
 gem "dotenv-rails"
+
+gem 'activeadmin'
+gem 'sass-rails'
+  gem "meta_search",    '>= 1.1.0.pre'

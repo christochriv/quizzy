@@ -1,25 +1,35 @@
 <section class="header-11-sub bg-green">
-    <div class="background">&nbsp;</div>
+  <div class="background">&nbsp;</div>
     <div class="container">
-        <div class="row">
-            <div class="span4 offset1">
-                <h3>Welcome to Quizzy</h3>
-                <p>
-                    Testez vos connaissances sur l'actualité. Défiez un ami. Jouez Maintenant!
-                </p>
-                <div class="additional-links">
-                    En vous inscrivant, vous acceptez les <a href="#">Conditions d'utilisation</a>
-                </div>
-            </div>
-            <div class="span4 offset2">
-                <%= link_to user_omniauth_authorize_path(:facebook), class: "fb-button fb-blue btn icon-btn btn-block btn-large large padded-btn-block row-space-1 btn-facebook" do %>
-                 <i class="fa fa-facebook"></i> Connexion avec Facebook
-                <% end %>
-               <%= render "form"%>
+      <div class="row">
+        <div class="span4 offset1">
+        
+        <h3>Pensez-vous être bien informé ?</h3>
+          <ul>
+            <p><li>100 nouvelles questions d'actualité tous les mercredis</li></p>
+            <p><li>Sélectionnées et vérifiées par un journaliste</li></p>
+            <p><li>Des sources fiables, hétérogènes, provenant du monde entier</li></p>
+            <p><li>Garanti 100 % pure info - ni sport, ni people, ni buzz</li></p>
+            <p><li>Découvrir et retenir les informations essentielles tout en s'amusant</li></p>
+          </ul>
 
-            </div>
+          <div class="additional-links">
+            En vous inscrivant, vous acceptez les <a href="#">Conditions d'utilisation</a>
+          </div>
+
         </div>
+
+      <div class="span4 offset2">
+        <%= link_to user_omniauth_authorize_path(:facebook), 
+        class: "fb-button fb-blue btn icon-btn btn-block btn-large large padded-btn-block row-space-1 btn-facebook" do %>
+          <i class="fa fa-facebook"></i> Connexion avec Facebook
+        <% end %>
+      
+      <%= render "form"%>
+      
+      </div>
     </div>
+  </div>
 </section>
 
 
