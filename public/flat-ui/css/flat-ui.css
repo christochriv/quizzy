@@ -1670,14 +1670,23 @@ textarea[class*="span"] {
 }
 .checkbox,
 .radio {
-  margin-bottom: 12px;
-  padding-left: 32px;
+  
+  padding-left: 50px;
   position: relative;
   -webkit-transition: color 0.25s linear;
   -moz-transition: color 0.25s linear;
   -o-transition: color 0.25s linear;
   transition: color 0.25s linear;
   -webkit-backface-visibility: hidden;
+
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin-left: -50px;
+  margin-top: 6px;
 }
 .checkbox input,
 .radio input {
@@ -1695,7 +1704,7 @@ textarea[class*="span"] {
   width: 20px;
   text-align: center;
   line-height: 20px;
-  font-size: 20px;
+  font-size: 32px;
   -webkit-transition: color 0.25s linear;
   -moz-transition: color 0.25s linear;
   -o-transition: color 0.25s linear;

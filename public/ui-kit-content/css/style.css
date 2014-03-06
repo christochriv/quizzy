@@ -728,7 +728,7 @@ section * {
   color: white;
 }
 body {
-  padding-top: 66px;
+  padding-top: 0px;
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -2544,8 +2544,8 @@ body section[class*=content-] {
 }
 .content-19 .span7 .quote .quote-author-photo {
   display: inline-block;
-  width: 32px;
-  height: 32px;
+  width: 15px;
+  height: 9px;
   background: #ebedee;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;

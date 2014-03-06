@@ -17,7 +17,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
             <% if user_signed_in? %>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=current_user.first_name %> <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" id="fb-profile" data-toggle="dropdown"><%= image_tag current_user.image, class: "img img-circle" %><b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Mes informations", profile_path %></li>
                 <li class="divider"></li>

@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="/ui-kit-header/css/style.css">
   <!-- footer -->
   <link rel="stylesheet" href="/ui-kit-footer/css/style.css">
+  <!-- content -->
+<link rel="stylesheet" href="/ui-kit-content/css/style.css">
 
 
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
@@ -29,10 +31,9 @@
 <body>
 
 <%= render "layouts/header" %>
-
-
-<%= yield %>
-
+<div class="container">
+  <%= yield %>
+</div>
 <%= render "layouts/footer" %>
 
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -53,4 +54,11 @@
   <script src="/common-files/js/jquery.svganim.js"></script>
   <script src="/common-files/js/jquery.parallax.min.js"></script>
   <script src="/common-files/js/startup-kit.js"></script>
+
+  <script src="/flat-ui/js/flatui-checkbox.js"></script>
+  <script src="/flat-ui/js/flatui-radio.js"></script>
+
+
+  
+
 </body>
