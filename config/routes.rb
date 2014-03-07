@@ -17,12 +17,11 @@ Quiz::Application.routes.draw do
   end
   
   resources :questions do
+    collection { post :import }
     resources :answers_sets
   end
 
   get '/profile' => 'users#show'
   get '/challenge/score(.:format)' => 'challenges#create', as: :score
-
-
 
 end

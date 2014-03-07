@@ -51,6 +51,11 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def import
+    Question.import(params[:file])
+    redirect_to root_url, notice: "Products imported."
+  end
+
   private
 
     def set_question

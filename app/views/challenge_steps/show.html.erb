@@ -13,7 +13,8 @@
 
 
                 <div class="span5">
-                    <div>
+                    <div class="todo mrm">
+                    <div class="todo-content">
                         <h3>Réponses possibles</h3>
                         <a class="btn">
                         	<%= f.label @challenge_step.question.answers_set.good_answer %>
@@ -34,6 +35,7 @@
 
                         		<p><%= f.submit "Question suivante" %></p>	
 													<% end %>
+                    </div>
                     </div>
                 </div>
             </div>

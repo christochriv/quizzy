@@ -6,7 +6,7 @@ gem 'rails', '4.0.2'
 gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+	gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -40,6 +40,8 @@ gem 'paperclip', "~> 3.0"
 #Facebook authentication
 gem 'omniauth-facebook'
 
+gem 'roo'
+
 #debuger
 group :development do
   gem 'better_errors'
@@ -62,6 +64,13 @@ gem 'rails_12factor', group: :production
 
 gem "dotenv-rails"
 
-gem 'activeadmin'
-gem 'sass-rails'
-  gem "meta_search",    '>= 1.1.0.pre'
+# gem 'activeadmin'	
+
+# gem "meta_search", '>= 1.1.0.pre'
+
+# gem "actionpack"
+
+# gem "activesupport"
+
+
+

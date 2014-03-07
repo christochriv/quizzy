@@ -1,5 +1,31 @@
-<h1>New question</h1>
 
-<%= render 'form' %>
+<div class="container">
+	<div class="span6">
+		<h1>New question</h1>
 
-<%= link_to 'Back', questions_path %>
+		<%= render 'form' %>
+
+			<h2>Import Questions</h2>
+
+			<%= form_tag import_questions_path, multipart: true do %>
+			  <%= file_field_tag :file %>
+			  <%= submit_tag "Import" %>
+			<% end %>
+	</div>
+
+	<div class="span6">
+	</div>
+
+	<%= link_to 'Back', questions_path %>
+</div>
+
+
+
+
+
+
+
+
+
+
+

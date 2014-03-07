@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   validates :email, presence: {:message => 'Vous devez entrer un email'}
   validates :first_name, presence: {:message => 'Vous devez entrer un prénom'}
-  validates :last_name, presence: {:message => 'Vous devez entrer un nom'}
+  
 
   def self.find_for_facebook_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
