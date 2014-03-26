@@ -1,30 +1,47 @@
-<header class="header-10">
+<link rel="shortcut icon" href="flat-ui/images/favicon.ico">
+<link rel="stylesheet" href="/samples/sample-06/css/style.css">
+
+<header class="header-3">
     <div class="container">
         <div class="navbar span12">
             <div class="navbar-inner">
                 <button type="button" class="btn btn-navbar"></button>
-                <a class="brand" href="/">Quizzy</a>
+                <a class="brand" href="/"><img src="img/logo@2x.png" width="50" height="50" alt="">Quizzy</a>
                 <div class="nav-collapse collapse pull-right">
                     <ul class="nav">
                         <li class="active"></li>
+                        <li><a href="/about">A propos</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
+
                     <form class="navbar-form pull-left">
-                    <% if user_signed_in? %>
-                        <div class="btn btn-info">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=current_user.first_name %> <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><%= link_to "Mes informations", profile_path %></li>
-                                <li class="divider"></li>
-                                <li><%= link_to('Se déconnecter', destroy_user_session_path, :method => :delete) %></li>      
+                        <% if user_signed_in? %>
+                            <button class="btn dropdown-toggle btn-primary" data-toggle="dropdown">
+                                <span class="filter-option pull-left"><%= current_user.first_name %></span>&nbsp;
+                                <span class="caret"></span>
+                            </button>
+
+                            <ul class="dropdown-menu" role="menu" style="overflow-y: auto; min-height: 108px; max-height: 302px;">
+                                <li style="text-align:right">
+                                    <%= link_to "Mes informations", profile_path %>
+                                </li>
+                                <li style="text-align:right" class="divider"></li>
+                                <li style="text-align:right">
+                                    <%= link_to('Se déconnecter', destroy_user_session_path, :method => :delete) %>
+                                </li> 
                             </ul>
-                        </div>
-                    
-                    <% end %>
+
+                        <% else %>
+                            <div class="btns">
+                              <%= link_to('Se connecter', new_user_session_path, :method => :get, class: "btn btn-primary") %> 
+                            </div>
+                        <% end %>
+
                     </form>
-                 
+             
                 </div>
             </div>
         </div>
     </div>
 </header>
+

@@ -4180,7 +4180,7 @@ body section[class*=content-] {
 }
 
 .header-11-sub .background{
-  background-image: url("http://www.blogduvoyage.fr/wp-content/uploads/2014/03/quiz_actu_photo.jpg");
+  background-image: url("/app/assets/images/home_background.JPG");
   background-position: 0 0px;
   opacity: 0.25;
 }

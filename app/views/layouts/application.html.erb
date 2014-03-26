@@ -1,56 +1,52 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Quizzy</title>
-  <!-- this code between <header> ... </header> -->
-  <link rel="stylesheet" href="/flat-ui/bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="/flat-ui/bootstrap/css/bootstrap-responsive.css">
-  <link rel="stylesheet" href="/flat-ui/css/flat-ui.css">
-  <!-- Using only with Flat-UI (free)-->
-  <link rel="stylesheet" href="/common-files/css/icon-font.css">
-  <!-- end -->
-  <link rel="stylesheet" href="/common-files/css/animations.css">
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quizzy - quiz d'actualité, nouvelle source d'info</title>
 
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/flat-ui/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="/flat-ui/bootstrap/css/bootstrap-responsive.css">
+        <link rel="stylesheet" href="/flat-ui/css/flat-ui.css"> 
+        
+        <!-- Using only with Flat-UI (free)-->
+            <link rel="stylesheet" href="/common-files/css/icon-font.css">
+        <!-- end -->  
+        
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="/flat-ui/js/html5shiv.js"></script>
+        <![endif]-->
+  </head>
 
+  <body>
+    
+    <%= render "layouts/header" unless @skip_header %>
+    <%= yield %>
 
+    <!-- render layouts/footer -->
+    
+        <!--[if lt IE 8]>
+        <script src="../../flat-ui/js/icon-font-ie7.js"></script>
+        <![endif]-->  
 
-
-  <!-- header -->
-  <link rel="stylesheet" href="/ui-kit-header/css/style.css">
-  <!-- footer -->
-  <link rel="stylesheet" href="/ui-kit-footer/css/style.css">
-
-
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-
-</head>
-<body>
-
-<%= render "layouts/header" %>
-
-
-<%= yield %>
-
-<%= render "layouts/footer" %>
-
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-
-
-
-  <script src="/flat-ui/js/jquery-1.8.3.min.js"></script>
-  <!-- this code directly before </body> -->
-  <script src="/flat-ui/js/bootstrap.min.js"></script>
-  <!--[if lt IE 8]>
-  <script src="../flat-ui/js/icon-font-ie7.js"></script>
-  <![endif]-->
-  <script src="/common-files/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-  <script src="/common-files/js/modernizr.custom.js"></script>
-  <script src="/common-files/js/page-transitions.js"></script>
-  <script src="/common-files/js/easing.min.js"></script>
-  <script src="/common-files/js/jquery.svg.js"></script>
-  <script src="/common-files/js/jquery.svganim.js"></script>
-  <script src="/common-files/js/jquery.parallax.min.js"></script>
-  <script src="/common-files/js/startup-kit.js"></script>
-</body>
+        <script src="/common-files/js/jquery.parallax.min.js"></script>
+        <script src="/common-files/js/startup-kit.js"></script>
+        <script src="js/script.js"></script>
+        
+        <script src="flat-ui/js/jquery-1.8.3.min.js"></script>
+        <script src="flat-ui/js/jquery-ui-1.10.3.custom.min.js"></script>
+        <script src="flat-ui/js/jquery.ui.touch-punch.min.js"></script>
+        <script src="flat-ui/js/bootstrap.min.js"></script>
+        <script src="flat-ui/js/bootstrap-select.js"></script>
+        <script src="flat-ui/js/bootstrap-switch.js"></script>
+        <script src="flat-ui/js/flatui-checkbox.js"></script>
+        <script src="flat-ui/js/flatui-radio.js"></script>
+        <script src="flat-ui/js/jquery.tagsinput.js"></script>
+        <script src="flat-ui/js/jquery.placeholder.js"></script>
+        <script src="flat-ui/js/jquery.stacktable.js"></script>
+        <script src="flat-ui/js/application.js"></script>
+  </body>
+</html>

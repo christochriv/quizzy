@@ -1,3 +1,21 @@
 // Place all the styles related to the Challenges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.checkbox {
+  list-style: none;
+  padding-left: 0;
+  position: static;
+  top: auto;
+  left: auto;
+
+  .icons {
+    position: relative;
+    margin-top: -25px;
+  }
+
+  label {
+    margin-left: 40px;
+    width: 200px;
+  }
+}

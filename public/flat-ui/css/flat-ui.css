@@ -2351,7 +2351,7 @@ textarea[class*="span"] {
   margin-top: 2px;
 }
 .open > .dropdown-menu {
-  margin-top: 18px;
+  margin-top: 0px;
   opacity: 1;
   visibility: visible;
 }
@@ -2360,7 +2360,7 @@ textarea[class*="span"] {
 }
 .dropdown-menu li:first-child > a {
   border-radius: 6px 6px 0 0;
-  padding-top: 8px;
+  padding-top: 10px;
 }
 .dropdown-menu li:last-child > a {
   border-radius: 0 0 6px 6px;
@@ -2386,7 +2386,7 @@ textarea[class*="span"] {
 }
 .dropdown-menu li > a {
   color: rgba(52, 73, 94, 0.75);
-  padding: 6px 15px 8px;
+  padding: 10px 20px 10px;
   text-decoration: none;
   *zoom: 1;
   -webkit-transition: background-color 0.25s;

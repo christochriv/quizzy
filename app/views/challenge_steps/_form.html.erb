@@ -1,24 +1,17 @@
 <%= form_for [@challenge, @challenge_step] do |f| %>
-	<%= @challenge_step.question.query %>
 
-	<ul>
-		<li>
-			<%= f.label @challenge_step.question.answers_set.good_answer %>
-			<%= f.radio_button :chosen_answer, @challenge_step.question.answers_set.good_answer %>
-		</li>
-		<li>
-			<%= f.label @challenge_step.question.answers_set.answer1 %>
-			<%= f.radio_button :chosen_answer, @challenge_step.question.answers_set.answer1 %>
-		</li>
-		<li>
-			<%= f.label @challenge_step.question.answers_set.answer2 %>
-			<%= f.radio_button :chosen_answer, @challenge_step.question.answers_set.answer2 %>
-		</li>
-		<li>
-			<%= f.label @challenge_step.question.answers_set.answer3 %>
-			<%= f.radio_button :chosen_answer, @challenge_step.question.answers_set.answer3 %>
-		</li>
-	</ul>
+    <% @answers_array = [] %>
+    <% @answers_array << @challenge_step.question.answers_set.good_answer %>
+    <% @answers_array << @challenge_step.question.answers_set.answer1 %>
+    <% @answers_array << @challenge_step.question.answers_set.answer2 %>
+    <% @answers_array << @challenge_step.question.answers_set.answer3 %>
 
-	<p><%= f.submit "Question suivante" %></p>	
-<% end %>
+    <% @answers_array.shuffle.each do |answer| %>
+    	<p><%= f.radio_button :chosen_answer, answer %><%= f.label answer %></p>
+
+      <br/>
+
+    <% end %>
+
+    <%= f.submit "Question suivante", class: "btn btn-block btn-primary" %>
+<% end %> 

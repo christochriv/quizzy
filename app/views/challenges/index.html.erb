@@ -1,27 +1,126 @@
-<div class="container text-center" >
-  <!-- <div class="hero-unit"> -->
-    <h1>Votre score moyen :</h1>
-      <h3><%= User.average_score(current_user)%> % de bonnes réponses !</h3>
-        <% if User.nb_of_good_answers(current_user) == 1 %>
-          <p>1 bonne réponse sur <%= User.nb_of_answered_questions(current_user) %> questions posées</p>
-        <% else %>
-          <p><%= User.nb_of_good_answers(current_user)%> bonnes réponses sur <%= User.nb_of_answered_questions(current_user) %> questions posées</p>
-        <% end %>
+<link rel="stylesheet" href="/samples/sample-04/css/style.css">
+
+<!-- #######################  New challenge ####################### -->
+
+<section class="content-8 v-center">
+  <div>               
+      <div class="container">
+          <img src="common-files/img/content/img-1@2x.png" width="397" height="193" alt="">                    
+          <h3>Savez-vous réellement ce qui s'est passé dans le monde ces sept derniers jours ?</h3>
+          <div class="row">
+              <div class="span6 offset3">
+                  <p>
+                    Au menu de la semaine : l'Ukraine, Sarkozy, et tout un tas de trucs importants à savoir sur la France et le monde.
+                  </p>
+
+                  <% if @available_questions.count == 0 %>
+                    <div class="btn btn-large btn-clear">
+                      Vous avez fini tous les quiz disponibles cette semaine !
+                    </div>
+                  <% else %>
+                    <%= link_to 'Commencer un nouveau challenge', new_challenge_path, class: "btn btn-large btn-clear" %>
+                  <% end %>                   
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+<!-- #######################  Previous results ####################### -->
+
+<section class="content-7 v-center">
+    <div>
+        <div class="container">
+            <h5>Vos précédents résultats</h5>
+
+            <br/>
+
+            <div class="row v-center">
+                <div class="span3">                            
+                    <div class="span3">
+                        <p style="text-align:right">Quel est votre score moyen à nos quiz ?</p>
+                    </div>
+                </div>
+
+                <div class="span4">                           
+                    <div class="span4 offset1">
+                        <div class="screen-wrapper">
+                            <div class="screen">
+
+                              <% if User.average_score(current_user) == true %>
+                                <p>
+                                  <%= User.average_score(current_user)%> % de bonnes réponses
+                                </p>
+
+                                <% if User.nb_of_good_answers(current_user) == 1 %>
+                                  <p>
+                                    1 bonne réponse sur <%= User.nb_of_answered_questions(current_user) %> questions posées
+                                  </p>
+                                <% else %>
+                                  <p>
+                                    <%= User.nb_of_good_answers(current_user)%> bonnes réponses sur <%= User.nb_of_answered_questions(current_user) %> questions posées
+                                  </p>
+                                <% end %>
+
+                              <% else %>
+                                <p>
+                                  Vous n'avez pas encore effectué de quiz
+                                </p>
+                              <% end %>
+
+                              En-dessous, il y aura une datavisu de vos résultats
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span3">                            
+                    <div class="span3 offset1">
+                        <h6>Vos points forts</h6>
+                        Of course we haven’t forgotten about the responsive layout. Full mobile support.
+                        <h6>Vos points faibles</h6>
+                        Startup Framework works fine on devices supporting Retina Display. Feel the clarity!
+                    </div>
+                </div>
+            </div>
+
+            <br/>
+
+
+<!-- #######################  Classement ####################### -->
+
+            <div class="row v-center">
+                <div class="span3">                            
+                    <div class="span3">
+                        <p style="text-align:right">Votre classement</p>
+                    </div>
+                </div>
+                <div class="span4">                           
+                    <div class="span4 offset1">
+                        <div class="screen-wrapper">
+                            <div class="screen">
+                                <img src="common-files/img/content/screen-popup.png" alt="">
+                                <img src="common-files/img/content/screen.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span3">                            
+                    <div class="span3 offset1">
+                        <h6>Les actus que tout le monde connaît</h6>
+                        Of course we haven’t forgotten about the responsive layout. Full mobile support.
+                        <h6>Ce que très peu de personnes savent</h6>
+                        Startup Framework works fine on devices supporting Retina Display. Feel the clarity!
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
       
-<!-- TO DO LIST -->      
-  <!--       <p>
-        C'est mieux que XXX % de nos utilisateurs !
-  </p> 
-  -->
-
-  <% if @available_questions.count == 0 %>
-      <p>Vous avez fini tous les quiz disponibles cette semaine ! </p>
-    <% else %>
-      <button type="button" class="btn btn-default">
-        <%= link_to 'Commencer un nouveau challenge', new_challenge_path %>
-      </button>
-    <% end %>
-
-</div>
-
-
+  

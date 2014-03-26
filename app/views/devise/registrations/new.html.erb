@@ -1,37 +1,65 @@
-<section class="header-11-sub bg-green">
+<link rel="stylesheet" href="/samples/sample-25/css/style.css">
+
+<!-- content-1 -->
+<!-- Catch sentence  -->
+
+<section class="header-23-sub">
   <div class="background">&nbsp;</div>
-    <div class="container">
-      <div class="row">
-        <div class="span4 offset1">
-        
-        <h3>Pensez-vous être bien informé ?</h3>
-          <ul>
-            <p><li>100 nouvelles questions d'actualité tous les mercredis</li></p>
-            <p><li>Sélectionnées et vérifiées par un journaliste</li></p>
-            <p><li>Des sources fiables, hétérogènes, provenant du monde entier</li></p>
-            <p><li>Garanti 100 % pure info - ni sport, ni people, ni buzz</li></p>
-            <p><li>Découvrir et retenir les informations essentielles tout en s'amusant</li></p>
-          </ul>
-
-          <div class="additional-links">
-            En vous inscrivant, vous acceptez les <a href="#">Conditions d'utilisation</a>
-          </div>
-
+  
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="hero-unit">
+          <a id="play" class="btn-play" href="#">Play</a>
+          <span>Pensez-vous être bien informé ?</span>
         </div>
-
-      <div class="span4 offset2">
-        <%= link_to user_omniauth_authorize_path(:facebook), 
-        class: "fb-button fb-blue btn icon-btn btn-block btn-large large padded-btn-block row-space-1 btn-facebook" do %>
-          <i class="fa fa-facebook"></i> Connexion avec Facebook
-        <% end %>
-      
-      <%= render "form"%>
-      
       </div>
     </div>
   </div>
 </section>
 
+
+<!-- content-2 -->
+<!-- Website's "What / Why / Who / When / How"  -->
+
+<section class="content-2">
+  <div class="container">
+    <div class="row">
+      <div class="span6">
+        <h3>Vérifiez-le en faisant un quiz !</h3>
+        <ul>
+          <p><li>Découvrir et retenir les informations essentielles à connaître</li></p>
+          <p><li>100 nouvelles questions d'actualité tous les mercredi</li></p>
+          <p><li>Sélectionnées et vérifiées par un journaliste</li></p>
+          <p><li>Garanti 100 % pure info - ni sport, ni people, ni buzz</li></p>    
+        </ul>
+       
+        <div class="btns">
+          <a class="btn btn-primary" href="#"><span class="fui-apple"> </span> Voir sur l'Appstore</a>
+          <a href="#" style="margin-left: 30;"><b>En savoir plus</b></a>
+        </div>
+      </div>
+
+
+      <!-- Offset1 -->
+      <div class="span1">
+      </div>
+
+
+      <!-- New registration  -->
+      <div class="span4">
+        
+          <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-block btn-info" do %>
+            <i class="fa fa-facebook"></i>Connexion avec Facebook
+          <% end %>
+          <br/>
+
+          <%= render "form"%>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
 

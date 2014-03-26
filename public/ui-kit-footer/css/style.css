@@ -494,7 +494,8 @@ section * {
   }
 }
 .container {
-  position: relative;
+  position: absolute;
+  bottom: 0;
   z-index: 2;
 }
 @media (max-width: 767px) {
