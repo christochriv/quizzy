@@ -1,7 +1,7 @@
 class CreateQuestions < ActiveRecord::Migration
   def change
     create_table :questions do |t|
-      t.text :query
+      t.string :query
       t.text :explication
       t.text :source_url
       t.integer :difficulty

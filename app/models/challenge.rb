@@ -3,7 +3,7 @@ class Challenge < ActiveRecord::Base
   has_many :challenge_steps
   has_many :questions
 
-  QUESTIONS_PER_CHALLENGE = 5
+  QUESTIONS_PER_CHALLENGE = 2
 
   def add_points(current_challenge)
  		current_challenge.challenge_steps.each do |c|

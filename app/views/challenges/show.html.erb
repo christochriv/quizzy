@@ -1,61 +1,102 @@
+<link rel="stylesheet" href="/samples/sample-05/css/style.css">
+
 <!-- Shortcuts -->
 	<% challenge = @challenge %>
 	<% steps = @challenge.challenge_steps %>
-	<% @challenge.challenge_steps.select('question_id') %>
+	
 
 
-<!-- En-tête -->
-	<h2>RESULTATS</h2>
+<!-- Score du Challenge  -->
+<section class="header-17-sub text-center">
+  <div class="background">&nbsp;</div>
+  <div class="container">
+      <div class="row">
+          <div class="span10 offset1">
+              <div class="hero-unit">
+                  <h1><%= @challenge.score %> / 10</h1>
+                  <p>C'est vraiment pas mal</p>
+              </div>
 
-	<p>
-	  <strong>Hey <%= current_user.first_name %>, tu as eu <%= @challenge.score %> bonnes réponses à ce challenge !</strong>
-	</p>
+							<% if @available_questions.count == 0 %>
+								<%= link_to "Vous avez fini tous les quiz disponibles cette semaine ! Retour à l'accueil", 
+								challenges_path, 
+								class: "btn btn-huge btn-clear" %>
 
-	<br/>
+							<% else %>
+								<%= link_to "Commencer un nouveau challenge", 
+								new_challenge_path, 
+								class: "btn btn-huge btn-clear" %>
 
-##################################################
+							<% end %>
 
-
-<!-- Détail des résultats -->
-
-<h2>Un petit feedback pour éclairer ta lanterne</h2>
-
-	<%= steps.each do |cs| %>
-		<p> La question : <%= cs.question.query %> </p>
-		<p> Les réponses possibles : 
-			- <%= cs.question.answers_set.good_answer %> 
-			- <%= cs.question.answers_set.answer1 %>
-			- <%= cs.question.answers_set.answer2 %>
-			- <%= cs.question.answers_set.answer3 %>
-		</p>
-		<p> Ta réponse : <%= cs.chosen_answer%> </p>
-		<p> La bonne réponse : <%= cs.question.answers_set.good_answer %> </p>
-		<p> Les autres utilisateurs ont été X/X à bien répondre à cette question ! </p>
-		<p> Une explication sur cette question : <%= cs.question.explication %> </p>
-		<p> La source de notre information : <%= cs.question.source_url %> </p>
-		<p> La difficulté de cette question : <%= cs.question.difficulty %> </p>
-
-		###########
-
-	<% end %>
+          </div>
+      </div>
+  </div>
+</section>
 
 
+<!-- Question / Réponse choisie / Bonne réponse  -->
+<% steps.each do |cs| %>
+	
+	<section class="content-3">
+	  <div class="container">
+      <div class="row">
+        <div class="span10 offset1" style="text-align:center">
+
+        		<!-- Intitulé de la question  -->
+            <h6><%= cs.question.query %></h6>
+        </div>
+
+				<div class="span10 offset1" style="text-align:center">
+					<div class="btns">
+
+						<!-- Réponse choisie  -->
+						<p class="btn btn-danger btn-clear">
+							<%= cs.chosen_answer %>  
+							<span class="fui-cross"></span>
+						</p>
+
+						<!-- Bonne réponse (si différente de la réponse choisie)  -->
+						<p class="btn btn-success">
+							<%= cs.question.answers_set.good_answer %>  
+							<span class="fui-check"></span>
+						</p>
+					</div>
+				</div>
+
+      </div>
+	  </div>
+	</section>
 
 
-##################################################
+<!-- Pie Chart pour connaître le pourcentage d'utilisateurs ayant choisi chaque réponse -->
 
-<!-- Un autre quiz -->
+	<script src="_results.js" type="text/javascript"></script>
 
-<p>
-	<% if @available_questions.count == 0 %>
-		<%= link_to "Vous avez fini tous les quiz disponibles cette semaine ! Retour à l'accueil", challenges_path, class: "btn btn-default btn-lg" %>
-	<% else %>
-		<%= link_to "Commencer un nouveau challenge", new_challenge_path, class: "btn btn-default btn-lg" %>
-		<%= link_to "Retour à l'accueil", challenges_path, class: "btn btn-default btn-lg" %>
-	<% end %>
-</p>
+			<!-- Difficulté / En savoir plus -->
 
 
 
 
+
+<!-- Explications -->
+	<section class="content-2">
+  <div>               
+      <div class="container">                 
+          <h3>Quelques explications</h3>
+          <div class="row">
+              <div class="span6 offset3">
+                  <p>
+                    <%= cs.question.explication %>
+                  </p>        
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<% end %>
+
+
+	
 
