@@ -6,4 +6,10 @@ class AnswersSet < ActiveRecord::Base
 	validates :answer2, presence: {:message => 'Vous devez proposer une deuxième fausse réponse'}
 	validates :answer3, presence: {:message => 'Vous devez proposer une troisième fausse réponse'}
 
+	rails_admin do
+    configure :question do
+      label 'Question of this set: '
+    end
+  end
+
 end

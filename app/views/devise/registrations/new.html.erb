@@ -1,67 +1,58 @@
 <link rel="stylesheet" href="/samples/sample-25/css/style.css">
+<!-- <link rel="stylesheet" href="/flat-ui/css/flat-ui.css"> -->
+<% @skip_header = true %>
 
 <!-- content-1 -->
 <!-- Catch sentence  -->
+
+<header class="header-23">
+            <div class="container">
+                <div class="row">
+                    <div class="navbar span12">
+                        <div class="navbar-inner">
+                            <button type="button" class="btn btn-navbar"></button>
+                            <a class="brand" href="/">Novastoria</a>
+                            <div class="nav-collapse collapse">
+                                <ul class="nav pull-right">
+                                    <li><a href="/about">A propos</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                    <li>
+                                    
+                                      <%= link_to('Se connecter', new_user_session_path, :method => :get) %> 
+                                    
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </header>
+
 
 <section class="header-23-sub">
   <div class="background">&nbsp;</div>
   
   <div class="container">
     <div class="row">
-      <div class="span12">
-        <div class="hero-unit">
-          <a id="play" class="btn-play" href="#">Play</a>
-          <span>Pensez-vous être bien informé ?</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-
-<!-- content-2 -->
-<!-- Website's "What / Why / Who / When / How"  -->
-
-<section class="content-2">
-  <div class="container">
-    <div class="row">
       <div class="span6">
-        <h3>Découvrez-le en faisant un quiz !</h3>
-        <ul>
-          <p><li>Retenir les informations essentielles de la semaine passée</li></p>
-          <p><li>100 nouvelles questions d'actualité tous les mercredi</li></p>
-          <p><li>Sélectionnées et vérifiées par un journaliste</li></p>
-          <p><li>Garanti 100 % pure info - ni sport, ni people, ni buzz</li></p>    
-        </ul>
-       
-        <div class="btns">
-          <a class="btn btn-primary" href="#"><span class="fui-apple"> </span> Voir sur l'Appstore</a>
-          <a href="#" style="margin-left: 30;"><b>En savoir plus</b></a>
-        </div>
+        <h6 style="color:#CCCCCC">Êtes-vous mieux informé que la moyenne ?</h6>
+          <br/>          
+        <p style="color:#CCCCCC">Testez chaque mercredi votre connaissance de l'actualité et comparez vos résultats à ceux des autres internautes</p>
+          <br/>
+        <p style="color:#CCCCCC">... ou remettez-vous à jour avec nous en cinq minutes ! </p>
       </div>
 
-
-      <!-- Offset1 -->
-      <div class="span1">
-      </div>
-
-
-      <!-- New registration  -->
-      <div class="span4">
-        
-          <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-block btn-info" do %>
-            <i class="fa fa-facebook"></i>Connexion avec Facebook
-          <% end %>
+      <div class="span5 offset1">
+        <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-block btn-inverse" do %>
+            <i class="fa fa-facebook-square fa-lg"> </i>   Connexion avec Facebook
+        <% end %>
           <br/>
 
-          <%= render "form"%>
+        <%= render "form"%>
       </div>
 
     </div>
   </div>
 </section>
-
-
-
-
-

@@ -1,9 +1,9 @@
 Quiz::Application.routes.draw do
 	
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-    
-  
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy' 
     
@@ -20,9 +20,9 @@ Quiz::Application.routes.draw do
     resources :challenge_steps
   end
   
-  resources :questions do
-    resources :answers_sets
-  end
+  # resources :questions do
+  #   resources :answers_sets
+  # end
 
   get '/profile' => 'users#show'
   get '/challenge/score(.:format)' => 'challenges#create', as: :score

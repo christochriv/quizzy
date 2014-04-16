@@ -5,6 +5,12 @@ class Challenge < ActiveRecord::Base
 
   QUESTIONS_PER_CHALLENGE = 2
 
+  rails_admin do
+    configure :champion do
+      label 'Champion of this challenge: '
+    end
+  end
+
   def add_points(current_challenge)
  		current_challenge.challenge_steps.each do |c|
 	  	c.chosen_answer == c.question.answers_set.good_answer ? current_challenge.score += 1 : nil

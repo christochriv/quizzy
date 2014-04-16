@@ -1,4 +1,4 @@
-<link rel="shortcut icon" href="flat-ui/images/favicon.ico">
+
 <link rel="stylesheet" href="/samples/sample-06/css/style.css">
 
 <header class="header-3">
@@ -6,7 +6,7 @@
         <div class="navbar span12">
             <div class="navbar-inner">
                 <button type="button" class="btn btn-navbar"></button>
-                <a class="brand" href="/"><img src="img/logo@2x.png" width="50" height="50" alt="">Quizzy</a>
+                <a class="brand" href="/"><!-- <img src="" width="50" height="50" alt=""> -->Novastoria</a>
                 <div class="nav-collapse collapse pull-right">
                     <ul class="nav">
                         <li class="active"></li>
@@ -21,12 +21,12 @@
                                 <span class="caret"></span>
                             </button>
 
-                            <ul class="dropdown-menu" role="menu" style="overflow-y: auto; min-height: 108px; max-height: 302px;">
-                                <li style="text-align:right">
+                            <ul class="dropdown-menu" role="menu">
+                                <li style="text-align:center">
                                     <%= link_to "Mes informations", profile_path %>
                                 </li>
-                                <li style="text-align:right" class="divider"></li>
-                                <li style="text-align:right">
+                                
+                                <li style="text-align:center">
                                     <%= link_to('Se déconnecter', destroy_user_session_path, :method => :delete) %>
                                 </li> 
                             </ul>
