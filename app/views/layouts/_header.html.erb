@@ -1,47 +1,30 @@
+<header>
+  <div class="theme-invert">
+    <nav class="mainmenu">
+      <div class="container">
 
-<link rel="stylesheet" href="/samples/sample-06/css/style.css">
+        <div class="dropdown" style="float:right">
+          <button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
+          
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+            
+            <% if user_signed_in? %>
+              <li><%= link_to 'Mes informations', profile_path %></li>
+              <li><%= link_to('Se déconnecter', destroy_user_session_path, :method => :delete) %></li>
 
-<header class="header-3">
-    <div class="container">
-        <div class="navbar span12">
-            <div class="navbar-inner">
-                <button type="button" class="btn btn-navbar"></button>
-                <a class="brand" href="/"><!-- <img src="" width="50" height="50" alt=""> -->Novastoria</a>
-                <div class="nav-collapse collapse pull-right">
-                    <ul class="nav">
-                        <li class="active"></li>
-                        <li><a href="/about">A propos</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                    </ul>
-
-                    <form class="navbar-form pull-left">
-                        <% if user_signed_in? %>
-                            <button class="btn dropdown-toggle btn-primary" data-toggle="dropdown">
-                                <span class="filter-option pull-left"><%= current_user.first_name %></span>&nbsp;
-                                <span class="caret"></span>
-                            </button>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li style="text-align:center">
-                                    <%= link_to "Mes informations", profile_path %>
-                                </li>
-                                
-                                <li style="text-align:center">
-                                    <%= link_to('Se déconnecter', destroy_user_session_path, :method => :delete) %>
-                                </li> 
-                            </ul>
-
-                        <% else %>
-                            <div class="btns">
-                              <%= link_to('Se connecter', new_user_session_path, :method => :get, class: "btn btn-primary") %> 
-                            </div>
-                        <% end %>
-
-                    </form>
-             
-                </div>
-            </div>
+            <% else %>
+              <li><a href="/" class="active">Accueil</a></li>
+              <li><a href="/about">A propos</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><%= link_to('Connexion', new_user_session_path, :method => :get, class:"btn btn-default btn-lg") %></li>
+            <% end %>
+            
+          </ul>
         </div>
-    </div>
+
+      </div>
+    </nav>         
+  </div>
 </header>
 

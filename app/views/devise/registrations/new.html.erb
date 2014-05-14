@@ -1,58 +1,160 @@
-<link rel="stylesheet" href="/samples/sample-25/css/style.css">
-<!-- <link rel="stylesheet" href="/flat-ui/css/flat-ui.css"> -->
-<% @skip_header = true %>
-
-<!-- content-1 -->
-<!-- Catch sentence  -->
-
-<header class="header-23">
-            <div class="container">
-                <div class="row">
-                    <div class="navbar span12">
-                        <div class="navbar-inner">
-                            <button type="button" class="btn btn-navbar"></button>
-                            <a class="brand" href="/">Novastoria</a>
-                            <div class="nav-collapse collapse">
-                                <ul class="nav pull-right">
-                                    <li><a href="/about">A propos</a></li>
-                                    <li><a href="/contact">Contact</a></li>
-                                    <li>
-                                    
-                                      <%= link_to('Se connecter', new_user_session_path, :method => :get) %> 
-                                    
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>            
-        </header>
+<!-- Skip Header -->
+<% @skip_header = false %>
 
 
-<section class="header-23-sub">
-  <div class="background">&nbsp;</div>
-  
+<!-- Header -->
+<div class="theme-invert" style="background:#505D6E url(../images/body1.jpg) no-repeat center center fixed">
+
+<!--nav class="mainmenu">
   <div class="container">
-    <div class="row">
 
-      <div class="span6">
-        <h6 style="color:#CCCCCC">Êtes-vous mieux informé que la moyenne ?</h6>
-          <br/>          
-        <p style="color:#CCCCCC">Testez chaque mercredi votre connaissance de l'actualité et comparez vos résultats à ceux des autres internautes</p>
-          <br/>
-        <p style="color:#CCCCCC">... ou remettez-vous à jour avec nous en cinq minutes ! </p>
-      </div>
-
-      <div class="span5 offset1">
-        <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-block btn-inverse" do %>
-            <i class="fa fa-facebook-square fa-lg"> </i>   Connexion avec Facebook
-        <% end %>
-          <br/>
-
-        <%= render "form"%>
-      </div>
-
+    <div class="dropdown">
+      <button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a data-toggle="dropdown" href="#">Dropdown trigger</a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <li><a href="/" class="active">Accueil</a></li>
+        <li><a href="/about">A propos</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><%= #link_to('Connexion', new_user_session_path, :method => :get, class:"btn btn-default btn-lg") %></li>
+      </ul>
     </div>
+
+  </div>
+</nav-->
+
+
+
+<!-- Main (Home) section -->
+<section class="section" id="head">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center"> 
+
+        <!-- Site Title, your name, HELLO msg, etc. -->
+        <h1 class="title">Novastoria</h1>
+        <h2 class="subtitle">Une autre façon de connaître l'actualité</h2>
+
+        <!-- Short introductory (optional) -->
+        <h3 class="tagline">
+          Notre premier truc : un quiz<br>
+          Dolorum, ullam, ducimus, eaque.
+        </h3>
+
+<!--         <ul class="list-inline intro-social-buttons">
+            <li><a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+            </li>
+            <li><a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+            </li>
+            <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+            </li>
+        </ul> -->
+
+        <!-- Nice place to describe your site in a sentence or two -->
+        <p><a href="/download/" class="btn btn-default btn-lg">Commencer un quiz</a></p>
+  
+      </div> <!-- /col -->
+    </div> <!-- /row -->
+  
   </div>
 </section>
+
+
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+
+                <div class="col-md-5">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h4 class="subtitle">Vous êtes bien informé ?</h4>
+                    <p class="lead">Testez <a href="http://www.blogduvoyage.fr">chaque mercredi</a> votre connaissance de l'actualité, validez vos connaissances, et comparez vos résultats à ceux des autres internautes</p>
+                </div>
+
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+              </div>
+
+              <div class="col-md-5" style="text-align:right">
+                  <hr class="section-heading-spacer">
+                  <div class="clearfix"></div>
+                  <h2 class="subtitle">Vous vous êtes un peu trop déconnecté ?</h2>
+                  <p class="lead">Rattrapez <a href="http://www.blogduvoyage.fr">l'actualité</a> en cinq minutes</p>
+              </div>
+
+                <div class="col-md-1">
+                    
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+
+
+
+
+<!-- 
+  ############################################################################################################################## 
+-->
+
+<!-- New Registration  -->
+  <div class="registration">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="intro-message">
+            <h3>Commencer un quiz</h3>
+            <hr class="intro-divider">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+
+        <div class="col-md-4">
+        </div>
+        
+        <div class="col-md-4">
+            <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-default btn-lg" do %>
+              <i class="fa fa-facebook fa-fw"> </i> Connexion avec Facebook
+            <% end %>
+                        
+            <%= render "form"%>
+        </div>
+
+        <div class="col-md-4">
+        </div>
+
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
