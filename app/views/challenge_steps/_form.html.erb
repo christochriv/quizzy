@@ -1,20 +1,41 @@
-<%= form_for [@challenge, @challenge_step] do |f| %>
+<!-- Loading ressources -->
+  <% @answers_array = [] %>
+  <% @answers_array << @challenge_step.question.answers_set.good_answer %>
+  <% @answers_array << @challenge_step.question.answers_set.answer1 %>
+  <% @answers_array << @challenge_step.question.answers_set.answer2 %>
+  <% @answers_array << @challenge_step.question.answers_set.answer3 %>
 
-    <% @answers_array = [] %>
-    <% @answers_array << @challenge_step.question.answers_set.good_answer %>
-    <% @answers_array << @challenge_step.question.answers_set.answer1 %>
-    <% @answers_array << @challenge_step.question.answers_set.answer2 %>
-    <% @answers_array << @challenge_step.question.answers_set.answer3 %>
+<!-- Question -->
+<div class="challenge_step">
+  <h4><b>Semaine du 4 juin 2014</b></h4>
+  <h5>Question 1 / 10</h5><br>
 
-    <% @answers_array.shuffle.each do |answer| %>
-    	<div>
-            <%= f.radio_button :chosen_answer, answer, class: "radio-button" %> 
-            <%= answer %>
-        </div>
+  <p class="text-primary"><b><%= @challenge_step.question.query %></b></p>
 
-      <br/>
 
+
+
+<!-- ############################################################### -->
+
+<!-- FORM -->
+<div class="btn-group-vertical btn-group btn-group-lg">
+  <% @answers_array.shuffle.each do |answer| %> 
+    <%= form_for [@challenge, @challenge_step] do |f| %>
+      <%= f.hidden_field :chosen_answer, value: answer %>
+    
+      <button class="btn btn-default btn-quiz" type="button" onclick="this.form.submit();">
+        <%= answer %>
+      </button>
     <% end %>
+   
+    <br>
+  <% end %>
+</div>
 
-    <%= f.submit "Question suivante", class: "btn btn-block btn-primary" %>
-<% end %> 
+<!-- jumbotron -->
+</div>
+
+
+
+
+

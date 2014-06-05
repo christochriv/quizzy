@@ -1,11 +1,29 @@
+<div class="theme-invert">
 
-<section class="content">
-  <div class="container">
-    <div class="row">
-      <div class="demo-headline">
-        <h6>Connexion</h6>
+<div class="registration">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div>
+            <h2 class="titletop">Connexion</h2>
+            <hr class="intro-divider">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+
+        <div class="col-md-4">
+        </div>
         
-					<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <div class="col-md-4">
+           <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-default btn-fb" do %>
+              <i class="fa fa-facebook fa-fw"> </i> Se connecter avec Facebook
+            <% end %>
+                        
+            <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 						<div class="controls controls-row">
 							<%= f.email_field :email, :autofocus => true, placeholder: "Email" %>
 						</div>
@@ -15,13 +33,19 @@
 						</div>
 
 						<div class="btns">
-							<%= f.submit "Se connecter", class: "btn btn-primary" %>
+							<%= f.submit "Se connecter", class:"btn btn-default btn-connect" %>
 						</div>
 					<% end %>
+        </div>
+
+        <div class="col-md-4">
+        </div>
+
+      </div>
 
       </div>
     </div>
+
   </div>
-</section>
 
 

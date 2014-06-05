@@ -3,21 +3,23 @@
     <nav class="mainmenu">
       <div class="container">
 
-        <div class="dropdown" style="float:right">
+        <div class="dropdown">
           <button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
           <!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
           
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
             
             <% if user_signed_in? %>
-              <li><%= link_to 'Mes informations', profile_path %></li>
+              <li><a href="/">Retour à l'accueil</a></li>
+              <li><a href="">Mon historique</a></li>
+              <li><%= link_to 'Mon profil', profile_path %></li>
               <li><%= link_to('Se déconnecter', destroy_user_session_path, :method => :delete) %></li>
 
             <% else %>
               <li><a href="/" class="active">Accueil</a></li>
               <li><a href="/about">A propos</a></li>
               <li><a href="/contact">Contact</a></li>
-              <li><%= link_to('Connexion', new_user_session_path, :method => :get, class:"btn btn-default btn-lg") %></li>
+              <li><%= link_to('Connexion', new_user_session_path, :method => :get) %></li>
             <% end %>
             
           </ul>

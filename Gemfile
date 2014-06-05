@@ -65,3 +65,5 @@ gem "dotenv-rails"
 gem 'rails_admin'
 
 gem 'cancan'
+
+gem 'activeadmin', github: 'gregbell/active_admin'

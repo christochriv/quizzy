@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416111327) do
+ActiveRecord::Schema.define(version: 20140604193001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,20 @@ ActiveRecord::Schema.define(version: 20140416111327) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories_questions", id: false, force: true do |t|
+    t.integer "question_id", null: false
+    t.integer "category_id", null: false
+  end
+
+  add_index "categories_questions", ["category_id", "question_id"], name: "index_categories_questions_on_category_id_and_question_id", using: :btree
+  add_index "categories_questions", ["question_id", "category_id"], name: "index_categories_questions_on_question_id_and_category_id", using: :btree
 
   create_table "challenge_steps", force: true do |t|
     t.integer  "challenge_id"
@@ -50,15 +64,15 @@ ActiveRecord::Schema.define(version: 20140416111327) do
   add_index "challenges", ["champion_id"], name: "index_challenges_on_champion_id", using: :btree
 
   create_table "questions", force: true do |t|
+    t.integer  "week_id"
     t.string   "query"
     t.text     "explication"
     t.text     "source_url"
-    t.integer  "difficulty"
-    t.string   "category"
-    t.integer  "week"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "questions", ["week_id"], name: "index_questions_on_week_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -74,18 +88,22 @@ ActiveRecord::Schema.define(version: 20140416111327) do
     t.string   "first_name"
     t.string   "last_name"
     t.date     "birth_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "token"
-    t.string   "image"
     t.string   "city"
     t.string   "gender"
+    t.string   "studies"
+    t.string   "job"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "weeks", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

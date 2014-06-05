@@ -1,269 +1,68 @@
-<link rel="stylesheet" href="/css/quizhome.css">
+<link rel="stylesheet" href="/templates/landing-page/css/landing-page.css">
 
 
-<!-- ############################################## SIDEBAR ASIDE ############################################## -->
+<!-- ############################################## HEADER ############################################## -->
 
-
-<aside>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
-    <div class="sidebar-content">
-      <nav>
-        <ul>
-          
-          <li class="active"><a href="/">QUIZ</a></li>
-          <li><a href="/">Ce que vous ne saviez pas</a></li>
-          <li><a href="/">Ce que les internautes ne savaient pas</a></li>
-          
-          <li>------------------</li>
-
-          <li><a href="/">CIR.CA</a></li>
-          <li><a href="/">Prochainement</a></li>
-
-          <li>------------------</li>
-
-          <li><a href="/">DATAVISUS</a></li>
-          <li><a href="/">Prochainement</a></li>
-
-          <li>------------------</li>
-
-          <li><a href="/">APPLICATIONS</a></li>
-          <li><a href="/">Prochainement</a></li>
-
-          <li>------------------</li>
-
-          <li><a href="/">LONG FORM STORIES</a></li>
-          <li><a href="/">Prochainement</a></li>
-
-        </ul>
-      </nav>
-    </div>
+      <div class="navbar-header">
+          <a class="navbar-brand" href="/">Novastoria</a>
+      </div>
   </div>
-</aside>
+</nav>
 
 
-
-<!-- ################################################################################################################## -->
-<!-- #######################  QUIZ SECTION ####################### -->
-
-
-<section class="content-8">
+<!-- ############################################## MAIN INTRO ############################################## -->
+<div class="intro-header">
   <div class="container">
     <div class="row">
-      <div class="span9 offset3">
+      <div class="col-lg-12">    
+        <div class="intro-message">
+          <h1>Bienvenue <%= current_user.first_name %></h1>
+          <h3>Score actuel : <%= User.nb_of_good_answers(current_user) %> / <%= User.nb_of_answered_questions(current_user) %></h3>
+          <hr class="intro-divider">
+          
+          <ul class="list-inline intro-social-buttons">
+            <li> 
+              <span class="network-name">
+                <% if @available_questions.count == 0 %>
+                  <div class="btn btn-default btn-lg">Aucun quiz disponible </div>
+                
+                <% else %>
+                  <div><%= link_to 'Commencer un nouveau quiz', new_challenge_path, class: "btn btn-default btn-lg" %></div>
+                <% end %>
+              </span>
+            </li>
 
-        <h3>Quiz</h3>
+            <br>
 
-        <br/>
+            <li>
+              <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg">
+                <i class="fa fa-github fa-fw"></i> 
+                <span class="network-name">Historique</span>
+              </a>
+            </li>
 
-        <% if @available_questions.count == 0 %>
-            <div class="btn btn-large btn-clear">
-              Vous avez fini tous les quiz disponibles cette semaine !
-            </div>
-        <% else %>
-            <div>
-              <%= link_to 'Commencer un nouveau quiz', new_challenge_path, class: "btn btn-clear" %>
-            </div>
-        <% end %>            
+            <br>
 
+            <li>
+              <a href="#" class="btn btn-default btn-lg">
+                <i class="fa fa-linkedin fa-fw"></i> 
+                <span class="network-name">Résultats des internautes</span>
+              </a>
+            </li>
+          </ul>
+        
+        </div>
       </div>
     </div>
-  </div><!--/.container-->
-</section>
+  </div>
+</div>
 
 
 
 
-
-
-
-
-<!-- ##############################################  THINGS YOU DIDN'T KNOW (= RESULTS) ############################################## -->
-
-    <section class="content-8">
-      <div class="container">
-        <div class="row">
-          <div class="span9 offset3">
-            <h6>Ce que vous ne saviez pas</h6>
-            <p>Startup Design Framework contains components and complex blocks which can easily be integrated into
-                almost any design. All of these components are made in the same style, and can easily be integrated into projects.</p>
-
-
-            <div class="row">
-              <div class="span3 offset5 description">
-                <h6>Easy to use</h6>
-                  To get started, you select the desired sample and base the website on it.
-
-                <img class="hidden-phone" src="img/line@2x.png" width="67" height="61" alt="">
-              </div>
-            </div>
-            <div class="row">
-              <div class="span7 offset1">
-                <img src="img/screen@2x.png" width="540" height="441" alt="">
-
-                <div class="features">
-                  <div class="box">
-                    <div class="fui-cmd text-success"></div>
-                    ALIGNED TO GRID
-                  </div>
-                  <div class="box">
-                    <div class="fui-mic text-info"></div>
-                    AVAILABLE FOR REC
-                  </div>
-                  <div class="box">
-                    <div class="fui-user text-danger"></div>
-                    MANY USERS
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!--/.container-->
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ##############################################  THINGS PEOPLE DIDN'T KNOW ############################################## -->
-
-
-    <!-- content-9  -->
-        <section class="content-9">
-            <div class="container">
-                <div class="row">
-                    <div class="span6 offset3">
-                        <h3>Variety of designs</h3>
-                        <p>Samples will show you the feeling on how to play around using the components in the website
-                            building process.</p>
-                        <div class="row">
-                            <div class="span3">
-                                <h6>Retina Ready</h6>
-                                Startup Framework works fine on devices supporting Retina Display. Feel the clarity!
-                            </div>
-                            <div class="span3">
-                                <h6>Responsive Layout</h6>
-                                Each of these pages you can use as-is or with new blocks from a UI Kit.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span3 hidden-phone">
-                        <img src="img/egg@2x.png" width="200" height="200" alt="">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-
-
-
-<!-- #######################  Previous results ####################### -->
-
-<section class="content-7 v-center">
-    <div>
-        <div class="container">
-            <h5>Vos précédents résultats</h5>
-
-            <br/>
-
-            <div class="row v-center">
-                <div class="span3">                            
-                    <div class="span3">
-                        <p style="text-align:left">Quel est votre score moyen à nos quiz ?</p>
-                    </div>
-                </div>
-
-                <div class="span4">                           
-                    <div class="span4 offset1">
-                        <div class="screen-wrapper">
-                            <div class="screen">
-
-                              <% if User.average_score(current_user) == true %>
-                                <p>
-                                  <%= User.average_score(current_user)%> % de bonnes réponses
-                                </p>
-
-                                <% if User.nb_of_good_answers(current_user) == 1 %>
-                                  <p>
-                                    1 bonne réponse sur <%= User.nb_of_answered_questions(current_user) %> questions posées
-                                  </p>
-                                <% else %>
-                                  <p>
-                                    <%= User.nb_of_good_answers(current_user)%> bonnes réponses sur <%= User.nb_of_answered_questions(current_user) %> questions posées
-                                  </p>
-                                <% end %>
-
-                              <% else %>
-                                <p>
-                                  Vous n'avez pas encore effectué de quiz
-                                </p>
-                              <% end %>
-
-                              En-dessous, il y aura une datavisu de vos résultats
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="span3">                            
-                    <div class="span3 offset1">
-                      <div style="text-align:right">
-                        <h6>Vos points forts</h6>
-                        Of course we haven’t forgotten about the responsive layout. Full mobile support.
-                        <h6>Vos points faibles</h6>
-                        Startup Framework works fine on devices supporting Retina Display. Feel the clarity!
-                      </div>
-                    </div>
-                </div>
-            </div>
-
-            <br/>
-
-
-<!-- #######################  Classement ####################### -->
-
-            <div class="row v-center">
-                <div class="span3">                            
-                    <div class="span3">
-                        <p style="text-align:left">Votre classement</p>
-                    </div>
-                </div>
-                <div class="span4">                           
-                    <div class="span4 offset1">
-                        <div class="screen-wrapper">
-                            <div class="screen">
-                                <img src="common-files/img/content/screen-popup.png" alt="">
-                                <img src="common-files/img/content/screen.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="span3">                            
-                    <div class="span3 offset1">
-                      <div style="text-align:right">
-                        <h6>Les actus que tout le monde connaît</h6>
-                        Of course we haven’t forgotten about the responsive layout. Full mobile support.
-                        <h6>Ce que très peu de personnes savent</h6>
-                        Startup Framework works fine on devices supporting Retina Display. Feel the clarity!
-                      </div>  
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-      
+<!-- User has answered a quiz -->
+<%= User.average_score(current_user) %>
+ 
   

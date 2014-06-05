@@ -27,11 +27,11 @@ RailsAdmin.config do |config|
     delete
     show_in_app
 
-    config.included_models = [
-                              "User", 
-                              "Question", 
-                              "AnswersSet"
-                              ]
+    # config.included_models = [
+    #                           "User", 
+    #                           "Question", 
+    #                           "AnswersSet"
+    #                           ]
 
     config.navigation_static_links = {
                                       'Google' => 'http://www.google.com'
@@ -69,21 +69,19 @@ RailsAdmin.config do |config|
         end
         field :explication
       end
+    end
 
-      # show do
-      #  field :first_name do
-      #     label "Prénom"
-      #   end
-      #   field :last_name 
-      # end
-
-      # edit do
-      #    field :first_name do
-      #     label "Prénom"
-      #   end
-      #   field :last_name
-      # end
-
+    config.model 'Week' do
+      list do
+        field :name do
+          label "Nom"
+        end
+      end
+      show do
+       field :name do
+          label "Nom"
+        end
+      end
     end
 
     ## With an audit adapter, you can add:

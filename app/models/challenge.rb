@@ -12,10 +12,13 @@ class Challenge < ActiveRecord::Base
   end
 
   def add_points(current_challenge)
- 		current_challenge.challenge_steps.each do |c|
-	  	c.chosen_answer == c.question.answers_set.good_answer ? current_challenge.score += 1 : nil
-	  end
-	  current_challenge.save
+ 		if current_challenge.score == 0
+      current_challenge.challenge_steps.each do |c|
+  	  	c.chosen_answer == c.question.answers_set.good_answer ? current_challenge.score += 1 : nil
+  	  end
+  	  current_challenge.save
+    else
+    end
 	end
 
 end

@@ -27,6 +27,4 @@ Quiz::Application.routes.draw do
   get '/profile' => 'users#show'
   get '/challenge/score(.:format)' => 'challenges#create', as: :score
 
-
-
 end

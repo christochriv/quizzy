@@ -6,7 +6,7 @@ class Question < ActiveRecord::Base
   validates :query, presence: {:message => 'Vous devez entrer une question'}
   validates :explication, presence: {:message => 'Vous devez entrer une explication pour recontextualiser la question'}
   validates :source_url, presence: {:message => 'Vous devez donner la source de votre information'}
-  validates :difficulty, presence: {:message => 'Vous devez définir un niveau de difficulté'}
+  validates :week_id, presence: {:message => 'Vous devez définir une semaine'}
 
   def self.available_questions(user)
   	answered_question_ids = ChallengeStep.where(answerer: user).collect {|p| [ p.question_id ] }.flatten.uniq

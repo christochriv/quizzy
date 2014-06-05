@@ -27,11 +27,12 @@ class ChallengeStepsController < ApplicationController
   end
 
   def update
-  	respond_to do |format|
+    respond_to do |format|
       if @challenge_step.update(challenge_step_params)
         next_question = @challenge.challenge_steps.where(chosen_answer: nil).first
         format.html { redirect_to [@challenge, next_question] }
       else
+        @challenge.add_points(@challenge)
         format.html { render action: 'show' }        
       end
     end
