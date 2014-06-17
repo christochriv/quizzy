@@ -1,6 +1,7 @@
 class ChallengesController < ApplicationController
   before_action :set_challenge, only: [:show, :edit, :update, :destroy]
   before_action :gather_available_questions, only: [:index, :show, :new]
+  before_action :set_number, only: [:show, :edit, :update, :destroy]
 
   def index
     @challenges = Challenge.all
@@ -66,6 +67,10 @@ class ChallengesController < ApplicationController
 
     def gather_available_questions
       @available_questions = Question.available_questions(current_user)
+    end
+
+    def set_number
+      @number = 1
     end
 
     def challenge_params

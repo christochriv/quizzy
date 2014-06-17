@@ -7,32 +7,30 @@
 
 <!-- Question -->
 <div class="challenge_step">
-  <h4><b>Semaine du 4 juin 2014</b></h4>
-  <h5>Question 1 / 10</h5><br>
-
+  <h4><b><%= Week.find(@challenge_step.question.week_id).name %></b></h4>
+  <h5>Question <%= 1 %> / <%= @challenge.challenge_steps.length %></h5><br>
   <p class="text-primary"><b><%= @challenge_step.question.query %></b></p>
-
 
 
 
 <!-- ############################################################### -->
 
 <!-- FORM -->
-<div class="btn-group-vertical btn-group btn-group-lg">
-  <% @answers_array.shuffle.each do |answer| %> 
-    <%= form_for [@challenge, @challenge_step] do |f| %>
-      <%= f.hidden_field :chosen_answer, value: answer %>
-    
-      <button class="btn btn-default btn-quiz" type="button" onclick="this.form.submit();">
-        <%= answer %>
-      </button>
+  <div class="btn-group-vertical btn-group btn-group-lg">
+    <% @answers_array.shuffle.each do |answer| %> 
+      <%= form_for [@challenge, @challenge_step] do |f| %>
+        <%= f.hidden_field :chosen_answer, value: answer %>
+      
+        <button class="btn btn-default btn-quiz" type="button" onclick="this.form.submit();">
+          <%= answer %>
+        </button>
+      <% end %>
+     
+      <br>
     <% end %>
-   
-    <br>
-  <% end %>
-</div>
+  </div>
 
-<!-- jumbotron -->
+<!-- Challenge_step -->
 </div>
 
 

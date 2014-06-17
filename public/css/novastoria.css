@@ -116,12 +116,12 @@ body {
 	overflow:auto;
 	height:100%;
 	padding-top:100px;
-	padding-bottom:110px; 
+	padding-bottom:25px; 
 	display:none;
 	top:0;
 } 
 @media (min-width: 768px) {
-	.section { padding-top:160px;}
+	.section { padding-top:150px;}
 }
 
 /* Show one of sections */
@@ -313,6 +313,7 @@ a:hover, a:active { color:#fff; text-decoration: underline; }
 }
 .theme-invert .navbar-toggle {
 	background: darkcyan;
+	opacity: 0.8;
 }
 .theme-invert .navbar-toggle .icon-bar {
   background: #333;
@@ -341,6 +342,7 @@ a:hover, a:active { color:#fff; text-decoration: underline; }
 	background-color: darkcyan;
 	opacity:0.8; 
 	padding-right: 15px;
+	padding-left: 15px;
 	opacity: 0.8;
 	border-radius: 5px;
 }
@@ -502,10 +504,37 @@ font-size:inherit;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-
 }
 
 .fond {
 	background:#505D6E url(../images/blop.jpg) no-repeat center center fixed;
 	background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.home-footer {
+	margin: 0 auto;
+	opacity: 1;
+	width: 75%;
+	padding-top: 50px;
+}
+
+.fa-custom {
+    color: #fff;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    display: inline-block;
+    padding: 5px 25px 5px 25px;
+}
+
+.fa-custom a {
+    color: #fff;
+}
+
+.fa-custom a:hover {
+    opacity: 0.7;
+    color:#ccc;
 }
