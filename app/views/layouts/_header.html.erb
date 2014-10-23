@@ -5,16 +5,17 @@
 
         <div class="dropdown">
           <button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
-          
+                    
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
             
+            <!-- Landing Page Menu -->
             <% if user_signed_in? %>
               <li><a href="/">Retour à l'accueil</a></li>
               <li><a href="">Mon historique</a></li>
               <li><%= link_to 'Mon profil', profile_path %></li>
               <li><%= link_to('Se déconnecter', destroy_user_session_path, :method => :delete) %></li>
 
+            <!-- App Menu -->
             <% else %>
               <li><a href="/" class="active">Accueil</a></li>
               <li><a href="/about">A propos</a></li>

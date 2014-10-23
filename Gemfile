@@ -66,4 +66,6 @@ gem 'rails_admin'
 
 gem 'cancan'
 
+gem 'casein', '~>5.0.0'
+
 # gem 'activeadmin', github: 'gregbell/active_admin'

@@ -40,29 +40,39 @@
     <div class="home-footer">
       <div class="row">
         <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center"> 
-          <div class="fa-custom">
+          
+          <div class="fa-custom" data-toggle="modal" data-target="#myModal">
             <a href="http://www.blogduvoyage.fr"><i class="fa fa-flask fa-3x"></i> 
               <strong><p>NOS IDEES</p></strong>
             </a>
           </div>
+          <!-- Modal -->
+          <%= render "ideas"%>
 
-          <div class="fa-custom">
+          <div class="fa-custom" data-toggle="modal" data-target="#myModal">
             <a href="http://www.blogduvoyage.fr"><i class="fa fa-question fa-3x"></i><i class="fa fa-question fa-2x"></i> 
               <strong><p>QUIZ</p></strong>
             </a>
           </div>
+          <!-- Modal -->
+          <%= render "quiz"%>
 
-          <div class="fa-custom">
+          <div class="fa-custom" data-toggle="modal" data-target="#myModal">
             <a href="http://www.blogduvoyage.fr"><i class="fa fa-book fa-3x"></i> 
               <strong><p>LONGS FORMATS</p></strong>
             </a>
           </div>
+          <!-- Modal -->
+          <%= render "longform"%>
 
-          <div class="fa-custom">
+          <div class="fa-custom" data-toggle="modal" data-target="#myModal">
             <a href="http://www.blogduvoyage.fr"><i class="fa fa-laptop fa-3x"></i> 
               <strong><p>PROJET FRENCH TECH</p></strong>
             </a>   
           </div>
+          <!-- Modal -->
+          <%= render "frenchtech"%>
+
         <!-- text-center -->
         </div>
       <!-- row -->
@@ -72,7 +82,7 @@
   <!-- container -->
   </div>
 </section>
-
+<!-- Footer Menu -->
 
 <!-- fond -->
 </div>

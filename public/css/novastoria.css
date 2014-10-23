@@ -157,6 +157,11 @@ a:hover, a:active { color:#fff; text-decoration: underline; }
 	margin-bottom:40px; 
 }
 
+.subtitle p {
+	color:#fff;
+	font-size: 0.5em;
+}
+
 .titletop { 
 	font-family: 'Pompiere', Helvetica, Arial, sans-serif;
 	font-weight:normal;
@@ -537,4 +542,8 @@ font-size:inherit;
 .fa-custom a:hover {
     opacity: 0.7;
     color:#ccc;
+}
+
+.theme-invert .modal-body {
+
 }
